@@ -4,7 +4,7 @@ export const config = {
   amp: 'hybrid',
 }
 
-const IndexPage = () => {
+const IndexPage = ({variable}) => {
   const isAmp = useAmp()
 
   return (
@@ -17,5 +17,12 @@ const IndexPage = () => {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const variable = "a variable prop"
+  return {
+    props: {variable},
+  };
+};
 
 export default IndexPage
